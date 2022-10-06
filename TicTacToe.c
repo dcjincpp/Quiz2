@@ -6,9 +6,10 @@ int main(){
     printf("========================================\n");
     printf("\n");
     printf("WELCOME TO TIC TAC TOE!");
+    printf("\n");
 
     //prompt user for game they wish to play (player or computer)
-
+    
 
     //read information from console
 
