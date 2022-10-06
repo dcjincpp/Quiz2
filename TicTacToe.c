@@ -3,7 +3,7 @@
 
 int main(){
     printf("\n");
-    printf("========================================\n");
+    printf("===========================\n");
     printf("\n");
     printf("WELCOME TO TIC TAC TOE!\n");
     printf("\n");
@@ -16,6 +16,13 @@ int main(){
     printf("Enter your choice (1 or 2): ");
 
     //read information from console
+    int i;
+    scanf("%d", &i);
+    printf("\n\n");
+    printf("===========================\n");
+    printf("\n");
+    printf("You have entered choice %d\n", i);
+    printf("\n");
 
 /* repeat until win or tie
     //show empty board (current status)
