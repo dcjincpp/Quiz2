@@ -2,6 +2,8 @@
 #include <stdio.h>
 
 int main(){
+    int input;
+
     printf("\n");
     printf("===========================\n");
     printf("\n");
@@ -14,16 +16,24 @@ int main(){
     printf("2 --- person vs. random computer\n");
     printf("\n");
     printf("Enter your choice (1 or 2): ");
+    scanf("%d", &input);
+
+    //Check user input
+
+    while(input != 1 && input != 2)
+    {
+        printf("%d is not a valid input, try again\n", input);
+        scanf("%d", &input);
+    }
+
 
     //read information from console
-    int i;
-    scanf("%d", &i);
     printf("\n\n");
     printf("===========================\n");
     printf("\n");
-    printf("You have entered choice %d\n", i);
+    printf("You have entered choice %d\n", input);
     printf("\n");
-    
+
     //Initial status of board
     printf("The current status is:\n");
     printf("\n");
@@ -36,8 +46,6 @@ int main(){
     printf("+--------------+\n");
 
 /* repeat until win or tie
-    //show empty board (current status)
-
 
     //prompt user to make their move by typing
 */
