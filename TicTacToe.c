@@ -23,6 +23,8 @@ int main(){
     printf("\n");
     printf("You have entered choice %d\n", i);
     printf("\n");
+    
+    //Initial status of board
     printf("The current status is:\n");
     printf("\n");
     printf("+--------------+\n");
