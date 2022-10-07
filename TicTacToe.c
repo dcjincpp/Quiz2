@@ -23,6 +23,15 @@ int main(){
     printf("\n");
     printf("You have entered choice %d\n", i);
     printf("\n");
+    printf("The current status is:\n");
+    printf("\n");
+    printf("+--------------+\n");
+    printf("|    |    |    |\n");
+    printf("+--------------+\n");
+    printf("|    |    |    |\n");
+    printf("+--------------+\n");
+    printf("|    |    |    |\n");
+    printf("+--------------+\n");
 
 /* repeat until win or tie
     //show empty board (current status)
