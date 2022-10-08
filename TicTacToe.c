@@ -1,6 +1,8 @@
 //Tic Tac Toe game between 2 players or player vs computer
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h> 
+#include <time.h> 
 
 int main(){
     int input;
@@ -311,6 +313,7 @@ int main(){
                             break;
 
                         default:
+                            printf("Invalid column\n");
                             printf("Try again\n");
                             scanf("%d %d", &row, &column);
                     }
