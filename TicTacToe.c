@@ -4,6 +4,8 @@
 
 int main(){
     int input;
+    char player[9] = {'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I'};
+    int row, column;
     bool win = false;
 
     printf("\n");
@@ -28,183 +30,274 @@ int main(){
         scanf("%d", &input);
     }
 
-
     //read information from console
     printf("\n\n");
     printf("===========================\n");
     printf("\n");
-    printf("You have entered choice %d\n", input);
+    printf("You have entered choice %c\n", input);
     printf("\n");
 
     //Initial status of board
     printf("The current status is:\n");
     printf("\n");
-    printf("+--------------+\n");
-    printf("|    |    |    |\n");
-    printf("+--------------+\n");
-    printf("|    |    |    |\n");
-    printf("+--------------+\n");
-    printf("|    |    |    |\n");
-    printf("+--------------+\n");
+    printf("+-----------+\n");
+    printf("| %c | %c | %c |\n", player[0], player[1], player[2]);
+    printf("+-----------+\n");
+    printf("| %c | %c | %c |\n", player[3], player[4], player[5]);
+    printf("+-----------+\n");
+    printf("| %c | %c | %c |\n", player[6], player[7], player[8]);
+    printf("+-----------+\n");
     printf("\n");
 
-    // repeat until win or tie
-    char player1[9];
-    char player2[9];
-    int row, column;
-
-    scanf("%d %d", &row, &column);
-    
-    switch(row)
-    {
-        case 1:
-            switch(column)
-            {
-                case 1:
-                    player1[0] = 'O';
-                    break;
-
-                case 2:
-                    player1[1] = 'O';
-                    break;
-
-                case 3:
-                    player1[2] = 'O';
-                    break;
-
-                default:
-                    printf("Invalid column\n");
-            }
-            break;
-
-        case 2:
-            switch(column)
-            {
-                case 1:
-                    player1[3] = 'O';
-                    break;
-
-                case 2:
-                    player1[4] = 'O';
-                    break;
-
-                case 3:
-                    player1[5] = 'O';
-                    break;
-                    
-                default:
-                    printf("Invalid column\n");
-            }
-            break;
-
-        case 3:
-            switch(column)
-            {
-                case 1:
-                    player1[6] = 'O';
-                    break;
-
-                case 2:
-                    player1[7] = 'O';
-                    break;
-
-                case 3:
-                    player1[8] = 'O';
-                    break;
-                    
-                default:
-                    printf("Invalid column\n");
-            }
-            break;
-
-        default:
-            printf("Invalid row\n");
-    }
-
-    printf("The current status is:\n");
-    printf("\n");
-    printf("+-----------+\n");
-    printf("|%c |%c| %c |\n", player1[0], player1[1], player1[2]);
-    printf("+-----------+\n");
-    printf("|%c |%c |%c |\n", player1[3], player1[4], player1[5]);
-    printf("+-----------+\n");
-    printf("|%c |%c |%c |\n", player1[6], player1[7], player1[8]);
-    printf("+-----------+\n");
-
+    //Prompt players to make their move and show their moves repeat until win or tie
     while(!win)
-    {
-        //Player 1 win condition
-        if(player1[1]==player1[2]==player1[3])
+    {////////////////////////////////////////////////////////////////////////////////////////////////player1
+        printf("player1: make your move\n");
+        printf("\n");
+        scanf("%d %d", &row, &column);
+        printf("\n");
+        
+        switch(row)
         {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[4]==player1[5]==player1[6])
+            case 1:
+                switch(column)
+                {
+                    case 1:
+                        player[0] = 'O';
+                        break;
+
+                    case 2:
+                        player[1] = 'O';
+                        break;
+
+                    case 3:
+                        player[2] = 'O';
+                        break;
+
+                    default:
+                        printf("Invalid column\n");
+                }
+            break;
+
+            case 2:
+                switch(column)
+                {
+                    case 1:
+                        player[3] = 'O';
+                        break;
+
+                    case 2:
+                        player[4] = 'O';
+                        break;
+
+                    case 3:
+                        player[5] = 'O';
+                        break;
+                    
+                    default:
+                        printf("Invalid column\n");
+                }
+                break;
+
+            case 3:
+                switch(column)
+                {
+                    case 1:
+                        player[6] = 'O';
+                        break;
+
+                    case 2:
+                        player[7] = 'O';
+                        break;
+
+                    case 3:
+                        player[8] = 'O';
+                        break;
+                    
+                    default:
+                        printf("Invalid column\n");
+                }
+                break;
+
+            default:
+                printf("Invalid row\n");
+        }
+        
+        printf("Good!\n");
+        printf("\n");
+        printf("The current status is:\n");
+        printf("\n");
+        printf("+-----------+\n");
+        printf("| %c | %c | %c |\n", player[0], player[1], player[2]);
+        printf("+-----------+\n");
+        printf("| %c | %c | %c |\n", player[3], player[4], player[5]);
+        printf("+-----------+\n");
+        printf("| %c | %c | %c |\n", player[6], player[7], player[8]);
+        printf("+-----------+\n");
+        printf("\n");
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////player2
+        printf("player2: make your move\n");
+        printf("\n");
+        scanf("%d %d", &row, &column);
+        
+        switch(row)
         {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[7]==player1[8]==player1[9])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[1]==player1[4]==player1[7])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[2]==player1[5]==player1[8])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[3]==player1[6]==player1[9])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[3]==player1[5]==player1[7])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[1]==player1[5]==player1[9])
-        {
-            win = true;
-            printf("Player 1 wins!");
+            case 1:
+                switch(column)
+                {
+                    case 1:
+                        player[0] = 'X';
+                        break;
+
+                    case 2:
+                        player[1] = 'X';
+                        break;
+
+                    case 3:
+                        player[2] = 'X';
+                        break;
+
+                    default:
+                        printf("Invalid column\n");
+                }
+            break;
+
+            case 2:
+                switch(column)
+                {
+                    case 1:
+                        player[3] = 'X';
+                        break;
+
+                    case 2:
+                        player[4] = 'X';
+                        break;
+
+                    case 3:
+                        player[5] = 'X';
+                        break;
+                    
+                    default:
+                        printf("InvalId column\n");
+                }
+                break;
+
+            case 3:
+                switch(column)
+                {
+                    case 1:
+                        player[6] = 'X';
+                        break;
+
+                    case 2:
+                        player[7] = 'X';
+                        break;
+
+                    case 3:
+                        player[8] = 'X';
+                        break;
+                    
+                    default:
+                        printf("Invalid column\n");
+                }
+                break;
+
+            default:
+                printf("Invalid row\n");
         }
 
-        //Player 2 win condition
-        if(player2[1]==player2[2]==player2[3])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[4]==player1[5]==player1[6])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[7]==player1[8]==player1[9])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[1]==player1[4]==player1[7])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[2]==player1[5]==player1[8])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[3]==player1[6]==player1[9])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[3]==player1[5]==player1[7])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        } else if (player1[1]==player1[5]==player1[9])
-        {
-            win = true;
-            printf("Player 1 wins!");
-        }
+        printf("Good!\n");
+        printf("\n");
+        printf("The current status is:\n");
+        printf("\n");
+        printf("+-----------+\n");
+        printf("| %c | %c | %c |\n", player[0], player[1], player[2]);
+        printf("+-----------+\n");
+        printf("| %c | %c | %c |\n", player[3], player[4], player[5]);
+        printf("+-----------+\n");
+        printf("| %c | %c | %c |\n", player[6], player[7], player[8]);
+        printf("+-----------+\n");
+        printf("\n");
 
-
+        
     }
+
+
+    /*while(!win)
+    {
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Player 1 win condition
+        if(player[1]==player[2]==player[3])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[4]==player[5]==player[6])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[7]==player[8]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[1]==player[4]==player[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[2]==player[5]==player[8])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[3]==player[6]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[3]==player[5]==player[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[1]==player[5]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Player 2 win condition
+        if(player[1]==player[2]==player[3])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[4]==player[5]==player[6])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[7]==player[8]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[1]==player[4]==player[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[2]==player[5]==player[8])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[3]==player[6]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[3]==player[5]==player[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player[1]==player[5]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        }
+
+
+    }*/
 
     //prompt user to make their move by typing
 //
