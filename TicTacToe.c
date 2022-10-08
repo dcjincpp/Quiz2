@@ -10,6 +10,7 @@ int main(){
     int row, column;
     bool win = false;
     bool placed = false;
+    int turns = 0;
 
     printf("\n");
     printf("===========================\n");
@@ -208,6 +209,7 @@ int main(){
             }
         }
 
+        turns++;
         placed = false;
         
         printf("Good!\n");
@@ -224,45 +226,48 @@ int main(){
         printf("\n");
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Player 1 win condition
-        if(player[0]==player[1]==player[2])
+        if(player[0] == player[1] && player[1] == player[2])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[3]==player[4]==player[5])
+        } else if (player[3] == player[4] && player[4] == player[5])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[6]==player[7]==player[8])
+        } else if (player[6] == player[7] && player[7] == player[8])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[0]==player[3]==player[6])
+        } else if (player[0] == player[3] && player[3] == player[6])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[1]==player[4]==player[7])
+        } else if (player[1] == player[4] && player[4] == player[7])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[2]==player[5]==player[7])
+        } else if (player[2] == player[5] && player[5] == player[8])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[0]==player[4]==player[8])
+        } else if (player[0] == player[4] && player[4] == player[8])
         {
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[2]==player[4]==player[6])
+        } else if (player[2] == player[4] && player[4] == player[6])
         {
             win = true;
             printf("Player 1 wins!");
+            break;
+        } else if(turns == 9)
+        {
             break;
         }
 
@@ -420,6 +425,8 @@ int main(){
                     scanf("%d %d", &row, &column);
             }
         }
+
+        turns++;
         placed = false;
 
         printf("Good!\n");
@@ -436,46 +443,45 @@ int main(){
         printf("\n");
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Player 2 win condition
-        if(player[0]==player[1]==player[2])
+        if(player[0] == player[1] && player[1] == player[2])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[3]==player[4]==player[5])
+        } else if (player[3] == player[4] && player[4] == player[5])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[6]==player[7]==player[8])
+        } else if (player[6] == player[7] && player[7] == player[8])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[1]==player[4]==player[7])
+        } else if (player[1] == player[4] && player[4] == player[7])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[2]==player[5]==player[8])
+        } else if (player[2] == player[5] && player[5] == player[8])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[0]==player[3]==player[6])
+        } else if (player[0] == player[3] && player[3] == player[6])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[0]==player[4]==player[8])
+        } else if (player[0] == player[4] && player[4] == player[8])
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[2]==player[4]==player[6])
+        } else if (player[2] == player[4] && player[4] == player[6])
         {
             win = true;
             printf("Player 2 wins!");
         }
     }
-    //prompt user to make their move by typing
-//
 
-
-
-
+    if(!win && turns == 9)
+    {
+        printf("Tie!");
+    }
 
     return 0;
 }
