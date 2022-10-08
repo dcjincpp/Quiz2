@@ -4,7 +4,7 @@
 
 int main(){
     int input;
-    char player[9] = {'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I'};
+    char player[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     int row, column;
     bool win = false;
 
@@ -136,6 +136,49 @@ int main(){
         printf("+-----------+\n");
         printf("\n");
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Player 1 win condition
+        if(player[1]==player[2]==player[3])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[4]==player[5]==player[6])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[7]==player[8]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[1]==player[4]==player[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[2]==player[5]==player[8])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[3]==player[6]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[3]==player[5]==player[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        } else if (player[1]==player[5]==player[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+            break;
+        }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////player2
         printf("player2: make your move\n");
         printf("\n");
@@ -220,7 +263,40 @@ int main(){
         printf("+-----------+\n");
         printf("\n");
 
-        
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Player 2 win condition
+        if(player[1]==player[2]==player[3])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[4]==player[5]==player[6])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[7]==player[8]==player[9])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[1]==player[4]==player[7])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[2]==player[5]==player[8])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[3]==player[6]==player[9])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[3]==player[5]==player[7])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        } else if (player[1]==player[5]==player[9])
+        {
+            win = true;
+            printf("Player 2 wins!");
+        }
     }
 
 
