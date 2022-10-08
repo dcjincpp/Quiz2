@@ -44,11 +44,92 @@ int main(){
     printf("+--------------+\n");
     printf("|    |    |    |\n");
     printf("+--------------+\n");
+    printf("\n");
 
-/* repeat until win or tie
+// repeat until win or tie
+    char player1[9];
+    int row, column;
+
+    scanf("%d %d", &row, &column);
+    
+    switch(row)
+    {
+        case 1:
+            switch(column)
+            {
+                case 1:
+                    player1[0] = 'O';
+                    break;
+
+                case 2:
+                    player1[1] = 'O';
+                    break;
+
+                case 3:
+                    player1[2] = 'O';
+                    break;
+
+                default:
+                    printf("Invalid column\n");
+            }
+            break;
+
+        case 2:
+            switch(column)
+            {
+                case 1:
+                    player1[3] = 'O';
+                    break;
+
+                case 2:
+                    player1[4] = 'O';
+                    break;
+
+                case 3:
+                    player1[5] = 'O';
+                    break;
+                    
+                default:
+                    printf("Invalid column\n");
+            }
+            break;
+
+        case 3:
+            switch(column)
+            {
+                case 1:
+                    player1[6] = 'O';
+                    break;
+
+                case 2:
+                    player1[7] = 'O';
+                    break;
+
+                case 3:
+                    player1[8] = 'O';
+                    break;
+                    
+                default:
+                    printf("Invalid column\n");
+            }
+            break;
+
+        default:
+            printf("Invalid row\n");
+    }
+
+    printf("The current status is:\n");
+    printf("\n");
+    printf("+-----------+\n");
+    printf("|%c |%c| %c |\n", player1[0], player1[1], player1[2]);
+    printf("+-----------+\n");
+    printf("|%c |%c |%c |\n", player1[3], player1[4], player1[5]);
+    printf("+-----------+\n");
+    printf("|%c |%c |%c |\n", player1[6], player1[7], player1[8]);
+    printf("+-----------+\n");
 
     //prompt user to make their move by typing
-*/
+//
 
 
 
