@@ -103,6 +103,7 @@ int main(){
                             break;
 
                         default:
+                            printf("Invalid column\n");
                             printf("Try again\n");
                             scanf("%d %d", &row, &column);
                     }
@@ -148,6 +149,7 @@ int main(){
                             break;
                     
                         default:
+                            printf("Invalid column\n");
                             printf("Try again\n");
                             scanf("%d %d", &row, &column);
                     }
