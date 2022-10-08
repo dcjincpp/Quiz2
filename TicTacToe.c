@@ -1,8 +1,10 @@
 //Tic Tac Toe game between 2 players or player vs computer
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(){
     int input;
+    bool win = false;
 
     printf("\n");
     printf("===========================\n");
@@ -46,8 +48,9 @@ int main(){
     printf("+--------------+\n");
     printf("\n");
 
-// repeat until win or tie
+    // repeat until win or tie
     char player1[9];
+    char player2[9];
     int row, column;
 
     scanf("%d %d", &row, &column);
@@ -127,6 +130,81 @@ int main(){
     printf("+-----------+\n");
     printf("|%c |%c |%c |\n", player1[6], player1[7], player1[8]);
     printf("+-----------+\n");
+
+    while(!win)
+    {
+        //Player 1 win condition
+        if(player1[1]==player1[2]==player1[3])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[4]==player1[5]==player1[6])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[7]==player1[8]==player1[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[1]==player1[4]==player1[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[2]==player1[5]==player1[8])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[3]==player1[6]==player1[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[3]==player1[5]==player1[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[1]==player1[5]==player1[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        }
+
+        //Player 2 win condition
+        if(player2[1]==player2[2]==player2[3])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[4]==player1[5]==player1[6])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[7]==player1[8]==player1[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[1]==player1[4]==player1[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[2]==player1[5]==player1[8])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[3]==player1[6]==player1[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[3]==player1[5]==player1[7])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        } else if (player1[1]==player1[5]==player1[9])
+        {
+            win = true;
+            printf("Player 1 wins!");
+        }
+
+
+    }
 
     //prompt user to make their move by typing
 //
