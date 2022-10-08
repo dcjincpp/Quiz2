@@ -4,9 +4,10 @@
 
 int main(){
     int input;
-    char player[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    char player[9] = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
     int row, column;
     bool win = false;
+    bool placed = false;
 
     printf("\n");
     printf("===========================\n");
@@ -34,7 +35,7 @@ int main(){
     printf("\n\n");
     printf("===========================\n");
     printf("\n");
-    printf("You have entered choice %c\n", input);
+    printf("You have entered choice %d\n", input);
     printf("\n");
 
     //Initial status of board
@@ -56,72 +57,154 @@ int main(){
         printf("\n");
         scanf("%d %d", &row, &column);
         printf("\n");
-        
-        switch(row)
+        while(!placed)
         {
-            case 1:
-                switch(column)
-                {
-                    case 1:
-                        player[0] = 'O';
-                        break;
+            switch(row)
+            {
+                case 1:
+                    switch(column)
+                    {
+                        case 1:
+                            if((player[0] == 'O') || (player[0] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[0] = 'O';
+                                placed = true;
+                            }
+                            break;
 
-                    case 2:
-                        player[1] = 'O';
-                        break;
+                        case 2:
+                            if((player[1] == 'O') || (player[1] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[1] = 'O';
+                                placed = true;
+                            }
+                            break;
 
-                    case 3:
-                        player[2] = 'O';
-                        break;
+                        case 3:
+                            if((player[2] == 'O') || (player[2] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[2] = 'O';
+                                placed = true;
+                            }
+                            break;
 
-                    default:
-                        printf("Invalid column\n");
-                }
-            break;
-
-            case 2:
-                switch(column)
-                {
-                    case 1:
-                        player[3] = 'O';
-                        break;
-
-                    case 2:
-                        player[4] = 'O';
-                        break;
-
-                    case 3:
-                        player[5] = 'O';
-                        break;
-                    
-                    default:
-                        printf("Invalid column\n");
-                }
+                        default:
+                            printf("Try again\n");
+                            scanf("%d %d", &row, &column);
+                    }
                 break;
 
-            case 3:
-                switch(column)
-                {
-                    case 1:
-                        player[6] = 'O';
-                        break;
+                case 2:
+                    switch(column)
+                    {
+                        case 1:
+                            if((player[3] == 'O') || (player[3] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[3] = 'O';
+                                placed = true;
+                            }
+                            break;
 
-                    case 2:
-                        player[7] = 'O';
-                        break;
+                        case 2:
+                            if((player[4] == 'O') || (player[4] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[4] = 'O';
+                                placed = true;
+                            }
+                            break;
 
-                    case 3:
-                        player[8] = 'O';
-                        break;
+                        case 3:
+                            if((player[5] == 'O') || (player[5] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[5] = 'O';
+                                placed = true;
+                            }
+                            break;
                     
-                    default:
-                        printf("Invalid column\n");
-                }
-                break;
+                        default:
+                            printf("Try again\n");
+                            scanf("%d %d", &row, &column);
+                    }
+                    break;
 
-            default:
-                printf("Invalid row\n");
+                case 3:
+                    switch(column)
+                    {
+                        case 1:
+                            if((player[6] == 'O') || (player[6] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[6] = 'O';
+                                placed = true;
+                            }
+                            break;
+
+                        case 2:
+                            if((player[7] == 'O') || (player[7] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[7] = 'O';
+                                placed = true;
+                            }
+                            break;
+
+                        case 3:
+                            if((player[8] == 'O') || (player[8] == 'X'))
+                            {
+                                printf("can not place there\n");
+                                printf("Try again\n");
+                                scanf("%d %d", &row, &column);
+                            } else {
+                                player[8] = 'O';
+                                placed = true;
+                            }
+                            break;
+                    
+                        default:
+                            printf("Invalid column\n");
+                            printf("Try again\n");
+                            scanf("%d %d", &row, &column);
+                    }
+                    break;
+
+                default:
+                    printf("Invalid row\n");
+                    printf("Try again\n");
+                    scanf("%d %d", &row, &column);
+            }
         }
+
+        placed = false;
         
         printf("Good!\n");
         printf("\n");
@@ -147,7 +230,7 @@ int main(){
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[7]==player[8]==player[9])
+        } else if (player[7]==player[8]==player[8])
         {
             win = true;
             printf("Player 1 wins!");
@@ -162,7 +245,7 @@ int main(){
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[3]==player[6]==player[9])
+        } else if (player[3]==player[6]==player[8])
         {
             win = true;
             printf("Player 1 wins!");
@@ -172,7 +255,7 @@ int main(){
             win = true;
             printf("Player 1 wins!");
             break;
-        } else if (player[1]==player[5]==player[9])
+        } else if (player[1]==player[5]==player[8])
         {
             win = true;
             printf("Player 1 wins!");
@@ -183,72 +266,156 @@ int main(){
         printf("player2: make your move\n");
         printf("\n");
         scanf("%d %d", &row, &column);
-        
-        switch(row)
+        while(!placed)
         {
-            case 1:
-                switch(column)
-                {
-                    case 1:
-                        player[0] = 'X';
-                        break;
 
-                    case 2:
-                        player[1] = 'X';
-                        break;
+            switch(row)
+            {
+                case 1:
+                    switch(column)
+                    {
+                        case 1:
+                            if((player[0] == 'O') || (player[0] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[0] = 'X';
+                                    placed = true;
+                                }
+                            break;
 
-                    case 3:
-                        player[2] = 'X';
-                        break;
+                        case 2:
+                            if((player[1] == 'O') || (player[1] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[1] = 'X';
+                                    placed = true;
+                                }
+                            break;
 
-                    default:
-                        printf("Invalid column\n");
-                }
-            break;
+                        case 3:
+                            if((player[2] == 'O') || (player[2] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[2] = 'X';
+                                    placed = true;
+                                }
+                            break;
 
-            case 2:
-                switch(column)
-                {
-                    case 1:
-                        player[3] = 'X';
-                        break;
+                        default:
+                            printf("Try again\n");
+                            scanf("%d %d", &row, &column);
+                    }
+                    break;
 
-                    case 2:
-                        player[4] = 'X';
-                        break;
+                case 2:
+                    switch(column)
+                    {
+                        case 1:
+                            if((player[3] == 'O') || (player[3] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[3] = 'X';
+                                    placed = true;
+                                }
+                            break;
 
-                    case 3:
-                        player[5] = 'X';
-                        break;
+                        case 2:
+                            if((player[4] == 'O') || (player[4] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[4] = 'X';
+                                    placed = true;
+                                }
+                            break;
+
+                        case 3:
+                            if((player[5] == 'O') || (player[5] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[5] = 'X';
+                                    placed = true;
+                            }
+                            break;
                     
-                    default:
-                        printf("InvalId column\n");
-                }
-                break;
+                        default:
+                            printf("Invalid column\n");
+                            printf("Try again\n");
+                            scanf("%d %d", &row, &column);
+                    }
+                    break;
 
-            case 3:
-                switch(column)
-                {
-                    case 1:
-                        player[6] = 'X';
-                        break;
+                case 3:
+                    switch(column)
+                    {
+                        case 1:
+                            if((player[6] == 'O') || (player[6] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[6] = 'X';
+                                    placed = true;
+                                }
+                            break;
 
-                    case 2:
-                        player[7] = 'X';
-                        break;
+                        case 2:
+                            if((player[7] == 'O') || (player[7] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[7] = 'X';
+                                    placed = true;
+                                }
+                            break;
 
-                    case 3:
-                        player[8] = 'X';
-                        break;
+                        case 3:
+                            if((player[8] == 'O') || (player[8] == 'X'))
+                                {
+                                    printf("can not place there\n");
+                                    printf("Try again\n");
+                                    scanf("%d %d", &row, &column);
+                                } else {
+                                    player[8] = 'X';
+                                    placed = true;
+                                }
+                            break;
                     
-                    default:
-                        printf("Invalid column\n");
-                }
-                break;
+                        default:
+                            printf("Invalid column\n");
+                            printf("Try again\n");
+                            scanf("%d %d", &row, &column);
+                            break;
+                    }
+                    break;
 
-            default:
-                printf("Invalid row\n");
+                default:
+                    printf("Invalid row\n");
+                    printf("Try again\n");
+                    scanf("%d %d", &row, &column);
+            }
         }
+        placed = false;
 
         printf("Good!\n");
         printf("\n");
@@ -272,7 +439,7 @@ int main(){
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[7]==player[8]==player[9])
+        } else if (player[6]==player[7]==player[8])
         {
             win = true;
             printf("Player 2 wins!");
@@ -284,7 +451,7 @@ int main(){
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[3]==player[6]==player[9])
+        } else if (player[3]==player[6]==player[8])
         {
             win = true;
             printf("Player 2 wins!");
@@ -292,7 +459,7 @@ int main(){
         {
             win = true;
             printf("Player 2 wins!");
-        } else if (player[1]==player[5]==player[9])
+        } else if (player[1]==player[5]==player[8])
         {
             win = true;
             printf("Player 2 wins!");
